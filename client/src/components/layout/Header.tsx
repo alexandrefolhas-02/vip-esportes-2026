@@ -12,6 +12,8 @@ export default function Header() {
   const [location] = useLocation();
 
   const isActive = (path: string) => location === path;
+  const isModalidadesActive = () => location.startsWith("/modalidades/");
+  const isUnidadesActive = () => location === "/unidades" || location.startsWith("/unidades/");
 
   return (
     <header className="fixed top-0 left-0 right-0 z-50 bg-[#000040]/95 backdrop-blur-md border-b border-white/10">
@@ -31,7 +33,7 @@ export default function Header() {
 
           {/* Modalidades Dropdown */}
           <div className="relative group">
-            <button className="px-3 py-2 text-sm font-medium text-white/90 hover:text-turquesa transition-colors flex items-center gap-1">
+            <button className={`px-3 py-2 text-sm font-medium transition-colors flex items-center gap-1 ${isModalidadesActive() ? "text-turquesa" : "text-white/90 hover:text-turquesa"}`}>
               Modalidades <ChevronDown className="w-3 h-3" />
             </button>
             <div className="absolute top-full left-0 pt-2 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200">
@@ -47,7 +49,7 @@ export default function Header() {
 
           {/* Unidades Dropdown */}
           <div className="relative group">
-            <button className="px-3 py-2 text-sm font-medium text-white/90 hover:text-turquesa transition-colors flex items-center gap-1">
+            <button className={`px-3 py-2 text-sm font-medium transition-colors flex items-center gap-1 ${isUnidadesActive() ? "text-turquesa" : "text-white/90 hover:text-turquesa"}`}>
               Unidades <ChevronDown className="w-3 h-3" />
             </button>
             <div className="absolute top-full left-0 pt-2 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200">
@@ -108,7 +110,7 @@ export default function Header() {
             </Link>
 
             {/* Modalidades Mobile */}
-            <button onClick={() => setModalidadesOpen(!modalidadesOpen)} className="px-3 py-3 text-white/90 hover:text-turquesa font-medium flex items-center justify-between">
+            <button onClick={() => setModalidadesOpen(!modalidadesOpen)} className={`px-3 py-3 font-medium flex items-center justify-between ${isModalidadesActive() ? "text-turquesa" : "text-white/90 hover:text-turquesa"}`}>
               Modalidades <ChevronDown className={`w-4 h-4 transition-transform ${modalidadesOpen ? "rotate-180" : ""}`} />
             </button>
             {modalidadesOpen && (
@@ -122,7 +124,7 @@ export default function Header() {
             )}
 
             {/* Unidades Mobile */}
-            <button onClick={() => setUnidadesOpen(!unidadesOpen)} className="px-3 py-3 text-white/90 hover:text-turquesa font-medium flex items-center justify-between">
+            <button onClick={() => setUnidadesOpen(!unidadesOpen)} className={`px-3 py-3 font-medium flex items-center justify-between ${isUnidadesActive() ? "text-turquesa" : "text-white/90 hover:text-turquesa"}`}>
               Unidades <ChevronDown className={`w-4 h-4 transition-transform ${unidadesOpen ? "rotate-180" : ""}`} />
             </button>
             {unidadesOpen && (

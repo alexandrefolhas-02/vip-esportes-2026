@@ -3,6 +3,7 @@ import { useEffect } from "react";
 import { getUnidadeById } from "@/data/unidades";
 import { getWhatsAppUrl } from "@/lib/whatsapp";
 import { ArrowLeft, MapPin, Clock, Users, ExternalLink } from "lucide-react";
+import { updateMetaTags } from "@/lib/seo";
 import NotFound from "./NotFound";
 
 export default function UnidadePage() {
@@ -11,7 +12,12 @@ export default function UnidadePage() {
 
   useEffect(() => {
     if (unidade) {
-      document.title = `${unidade.nome} | VIP Esportes`;
+      updateMetaTags({
+        title: `${unidade.nome} | Unidades VIP Esportes`,
+        description: unidade.descricao,
+        keywords: `${unidade.nome.toLowerCase()}, unidade vip esportes, aulas ${unidade.modalidades.map(m => m.toLowerCase()).join(', ')}`,
+        image: unidade.imagens?.[0]
+      });
     }
     window.scrollTo(0, 0);
   }, [unidade]);
@@ -72,15 +78,24 @@ export default function UnidadePage() {
                 ))}
               </ul>
 
-              {/* Photo space */}
-              <h3 className="font-heading text-xl font-bold text-navy uppercase mt-8 mb-3">Fotos</h3>
-              <div className="grid grid-cols-2 sm:grid-cols-3 gap-3">
-                {Array.from({ length: 3 }).map((_, i) => (
-                  <div key={i} className="aspect-[4/3] bg-gray-100 rounded-lg flex items-center justify-center">
-                    <span className="text-sm text-gray-400">Foto {i + 1}</span>
+              {/* Fotos */}
+              {unidade.imagens && unidade.imagens.length > 0 && (
+                <>
+                  <h3 className="font-heading text-xl font-bold text-navy uppercase mt-8 mb-3">Fotos da Unidade</h3>
+                  <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
+                    {unidade.imagens.map((img, i) => (
+                      <div key={i} className="aspect-[4/3] rounded-xl overflow-hidden border border-gray-100 shadow-sm hover:shadow-md transition-shadow">
+                        <img
+                          src={img}
+                          alt={`Foto ${i + 1} da Unidade ${unidade.nome}`}
+                          className="w-full h-full object-cover hover:scale-105 transition-transform duration-300"
+                          loading="lazy"
+                        />
+                      </div>
+                    ))}
                   </div>
-                ))}
-              </div>
+                </>
+              )}
             </div>
 
             {/* Sidebar */}

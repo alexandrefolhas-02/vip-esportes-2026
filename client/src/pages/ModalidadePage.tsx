@@ -4,6 +4,7 @@ import { getModalidadeBySlug } from "@/data/modalidades";
 import { getUnidadeById } from "@/data/unidades";
 import { getWhatsAppUrl } from "@/lib/whatsapp";
 import { ArrowLeft, Check, MapPin } from "lucide-react";
+import { updateMetaTags } from "@/lib/seo";
 import NotFound from "./NotFound";
 
 export default function ModalidadePage() {
@@ -12,7 +13,12 @@ export default function ModalidadePage() {
 
   useEffect(() => {
     if (modalidade) {
-      document.title = `${modalidade.nome} | VIP Esportes`;
+      updateMetaTags({
+        title: `${modalidade.nome} | VIP Esportes`,
+        description: modalidade.descricaoCurta,
+        keywords: `${modalidade.nome.toLowerCase()}, aulas ${modalidade.nome.toLowerCase()}, treinamento, vip esportes`,
+        image: modalidade.imagem
+      });
     }
     window.scrollTo(0, 0);
   }, [modalidade]);

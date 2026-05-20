@@ -2,10 +2,12 @@ import { useEffect } from "react";
 import { Link } from "wouter";
 import { getWhatsAppUrl } from "@/lib/whatsapp";
 import { ArrowLeft, Target, Eye, Heart } from "lucide-react";
+import { updateMetaTags } from "@/lib/seo";
+import { seoPages } from "@/data/seo";
 
 export default function Sobre() {
   useEffect(() => {
-    document.title = "A VIP | VIP Esportes";
+    updateMetaTags(seoPages.sobre);
     window.scrollTo(0, 0);
   }, []);
 

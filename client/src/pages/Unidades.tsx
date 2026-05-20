@@ -3,6 +3,8 @@ import { Link } from "wouter";
 import { MapPin, ArrowRight } from "lucide-react";
 import { unidades, type Modalidade, type TipoLocal } from "@/data/unidades";
 import { getWhatsAppUrl } from "@/lib/whatsapp";
+import { updateMetaTags } from "@/lib/seo";
+import { seoPages } from "@/data/seo";
 
 type FilterType = "all" | Modalidade | TipoLocal;
 
@@ -22,7 +24,7 @@ export default function UnidadesPage() {
   const [activeFilter, setActiveFilter] = useState<FilterType>("all");
 
   useEffect(() => {
-    document.title = "Unidades | VIP Esportes";
+    updateMetaTags(seoPages.unidades);
     window.scrollTo(0, 0);
   }, []);
 

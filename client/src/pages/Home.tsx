@@ -1,4 +1,6 @@
 import { useEffect } from "react";
+import { updateMetaTags } from "@/lib/seo";
+import { seoPages } from "@/data/seo";
 import Hero from "@/components/sections/Hero";
 import AutoridadeSection from "@/components/sections/AutoridadeSection";
 import ModalidadesSection from "@/components/sections/ModalidadesSection";
@@ -14,7 +16,7 @@ import SeletorUnidade from "@/components/sections/SeletorUnidade";
 
 export default function Home() {
   useEffect(() => {
-    document.title = "VIP Esportes | Aulas de Beach Tennis, Vôlei e Vôlei de Praia no Rio de Janeiro";
+    updateMetaTags(seoPages.home);
   }, []);
 
   return (

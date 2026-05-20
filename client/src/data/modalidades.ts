@@ -33,7 +33,7 @@ export const modalidades: ModalidadeData[] = [
     ],
     imagem: "https://d2xsxph8kpxj0f.cloudfront.net/310519663596061507/UA3RZ5gzAZGiHCDo7dd6JB/beach-tennis-action-SAbWihzpEeKFKKgBkfG8xG.webp",
     botaoTexto: "Agendar Beach Tennis",
-    whatsappKey: "geral",
+    whatsappKey: "beachTennis",
     unidadesIds: ["cdesign", "tennis-route", "nova-ipanema"],
   },
   {
@@ -53,7 +53,7 @@ export const modalidades: ModalidadeData[] = [
     ],
     imagem: "https://d2xsxph8kpxj0f.cloudfront.net/310519663596061507/UA3RZ5gzAZGiHCDo7dd6JB/volei-indoor-aWVCWSzP5C8vcFoWP2AYvj.webp",
     botaoTexto: "Agendar Vôlei",
-    whatsappKey: "geral",
+    whatsappKey: "volei",
     unidadesIds: ["icone-recreio", "icone-freguesia", "icone-taquara", "st-georges", "start", "aquidaba"],
   },
   {
@@ -73,7 +73,7 @@ export const modalidades: ModalidadeData[] = [
     ],
     imagem: "https://d2xsxph8kpxj0f.cloudfront.net/310519663596061507/UA3RZ5gzAZGiHCDo7dd6JB/volei-praia-4ncAvwedaXsKxWhHRbRgxr.webp",
     botaoTexto: "Agendar Vôlei de Praia",
-    whatsappKey: "geral",
+    whatsappKey: "voleiDePraia",
     unidadesIds: ["nova-ipanema", "guaratiba"],
   },
   {

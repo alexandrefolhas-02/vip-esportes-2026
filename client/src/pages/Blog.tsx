@@ -1,6 +1,8 @@
 import { useEffect } from "react";
 import { Link } from "wouter";
 import { ArrowLeft, Calendar } from "lucide-react";
+import { updateMetaTags } from "@/lib/seo";
+import { seoPages } from "@/data/seo";
 
 // Placeholder blog posts - editável pelo Antigravity
 const posts = [
@@ -36,7 +38,7 @@ const posts = [
 
 export default function Blog() {
   useEffect(() => {
-    document.title = "Blog | VIP Esportes";
+    updateMetaTags(seoPages.blog);
     window.scrollTo(0, 0);
   }, []);
 

@@ -2,6 +2,8 @@ import { useEffect } from "react";
 import { Link } from "wouter";
 import { getWhatsAppUrl } from "@/lib/whatsapp";
 import { Crosshair, Shield, Smile, TrendingUp, Users, Heart, ArrowLeft } from "lucide-react";
+import { updateMetaTags } from "@/lib/seo";
+import { seoPages } from "@/data/seo";
 
 const pilares = [
   { icon: Crosshair, titulo: "Técnica", descricao: "Ensino técnico estruturado e progressivo, respeitando o nível de cada aluno e promovendo evolução constante com fundamentos sólidos." },
@@ -14,7 +16,7 @@ const pilares = [
 
 export default function MetodologiaPage() {
   useEffect(() => {
-    document.title = "Metodologia | VIP Esportes";
+    updateMetaTags(seoPages.metodologia);
     window.scrollTo(0, 0);
   }, []);
 

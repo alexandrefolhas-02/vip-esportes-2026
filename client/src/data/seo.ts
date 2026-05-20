@@ -48,4 +48,14 @@ export const seoPages: Record<string, SEOData> = {
     description: "Leve a metodologia VIP Esportes para sua escola, clube ou condomínio. Projetos esportivos personalizados.",
     keywords: "esporte escola, projeto esportivo, vôlei escola, beach tennis condomínio",
   },
+  sobre: {
+    title: "Quem Somos | VIP Esportes",
+    description: "Conheça a VIP Esportes, nossa história, missão, visão e valores voltados à excelência no ensino de esportes.",
+    keywords: "quem somos, história vip esportes, escola esportiva rio de janeiro",
+  },
+  blog: {
+    title: "Blog | VIP Esportes - Dicas e Artigos Esportivos",
+    description: "Dicas de treinamento, notícias sobre eventos e torneios, e artigos sobre saúde e bem-estar no esporte.",
+    keywords: "blog vip esportes, dicas beach tennis, dicas vôlei, saúde esporte",
+  },
 };

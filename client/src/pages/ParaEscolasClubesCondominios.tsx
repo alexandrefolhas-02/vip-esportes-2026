@@ -2,6 +2,8 @@ import { useEffect } from "react";
 import { Link } from "wouter";
 import { getWhatsAppUrl } from "@/lib/whatsapp";
 import { ArrowLeft, Check, Building, GraduationCap, Home } from "lucide-react";
+import { updateMetaTags } from "@/lib/seo";
+import { seoPages } from "@/data/seo";
 
 const beneficios = [
   "Metodologia própria e comprovada",
@@ -34,7 +36,7 @@ const tiposParcerias = [
 
 export default function ParaEscolasClubesCondominios() {
   useEffect(() => {
-    document.title = "Para Escolas, Clubes e Condomínios | VIP Esportes";
+    updateMetaTags(seoPages.paraEscolas);
     window.scrollTo(0, 0);
   }, []);
 

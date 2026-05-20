@@ -70,6 +70,21 @@ export const whatsappMessages: Record<string, WhatsAppMessage> = {
     label: "Clube de Aeronáutica",
     message: "Olá, tenho interesse em saber mais sobre a Equipe de Competição da VIP Esportes no Clube de Aeronáutica.",
   },
+  beachTennis: {
+    id: "beachTennis",
+    label: "Beach Tennis",
+    message: "Olá, gostaria de agendar uma aula experimental de Beach Tennis na VIP Esportes. Quais são os horários e locais disponíveis?",
+  },
+  volei: {
+    id: "volei",
+    label: "Vôlei",
+    message: "Olá, tenho interesse em saber mais sobre as aulas de Vôlei da VIP Esportes. Poderia me enviar os locais e horários disponíveis?",
+  },
+  voleiDePraia: {
+    id: "voleiDePraia",
+    label: "Vôlei de Praia",
+    message: "Olá, gostaria de agendar uma aula experimental de Vôlei de Praia na VIP Esportes. Quais são os locais e turmas?",
+  },
   escolasClubes: {
     id: "escolasClubes",
     label: "Escolas, clubes e condomínios",
