@@ -1,0 +1,44 @@
+# Regras para edição no Antigravity - VIP Esportes
+
+## Estrutura do projeto
+- Framework: React + Vite + TypeScript + Tailwind CSS
+- Roteamento: wouter (similar ao React Router)
+- Estilização: Tailwind CSS com classes utilitárias
+- Dados: Centralizados em `client/src/data/`
+
+## Convenções
+- Componentes funcionais com Hooks
+- Props tipadas com interfaces TypeScript
+- Dados editáveis separados dos componentes
+- Nomes de arquivos em PascalCase para componentes
+- Nomes de arquivos em camelCase para utilitários e dados
+
+## Arquivos de dados editáveis
+- `client/src/data/modalidades.ts` - Modalidades esportivas
+- `client/src/data/unidades.ts` - Unidades/locais
+- `client/src/data/whatsapp.ts` - Mensagens de WhatsApp
+- `client/src/data/depoimentos.ts` - Depoimentos de alunos
+- `client/src/data/seo.ts` - Dados de SEO por página
+
+## WhatsApp
+- Número principal: 5521978726747
+- Utilitário: `client/src/lib/whatsapp.ts`
+- Cada botão usa uma chave do arquivo `whatsapp.ts`
+
+## Cores principais
+- Turquesa: #00B2B2 (classe: text-turquesa, bg-turquesa)
+- Azul-marinho: #000040 (classe: text-navy, bg-navy)
+- Preto: #000000
+- Branco: #FFFFFF
+
+## Comandos
+- `npm install` ou `pnpm install` - Instalar dependências
+- `npm run dev` - Servidor de desenvolvimento
+- `npm run build` - Build de produção
+- `npm run preview` - Preview do build
+
+## Deploy
+- Plataforma: Vercel
+- Framework Preset: Vite
+- Build Command: npm run build
+- Output Directory: dist
