@@ -1,0 +1,83 @@
+"use client";
+import { useState } from "react";
+import Link from "next/link";
+import { MapPin, ArrowRight } from "lucide-react";
+import { unidades, type Modalidade, type TipoLocal } from "@/data/unidades";
+import { getWhatsAppUrl } from "@/lib/whatsapp";
+
+type FilterType = "all" | Modalidade | TipoLocal;
+
+const filters: { label: string; value: FilterType }[] = [
+  { label: "Todas", value: "all" },
+  { label: "Beach Tennis", value: "Beach Tennis" },
+  { label: "Vôlei", value: "Vôlei" },
+  { label: "Vôlei de Praia", value: "Vôlei de Praia" },
+  { label: "Competição", value: "Equipe de Competição" },
+  { label: "Praia", value: "Praia" },
+  { label: "Escola", value: "Escola" },
+  { label: "Clube", value: "Clube" },
+  { label: "Condomínio", value: "Condomínio" },
+];
+
+export default function UnidadesSection() {
+  const [activeFilter, setActiveFilter] = useState<FilterType>("all");
+
+  const filteredUnidades = unidades.filter((u) => {
+    if (activeFilter === "all") return true;
+    return u.modalidades.includes(activeFilter as Modalidade) || u.tipos.includes(activeFilter as TipoLocal);
+  });
+
+  return (
+    <section className="py-20 lg:py-28 bg-white">
+      <div className="container">
+        <div className="text-center max-w-3xl mx-auto mb-10">
+          <h2 className="font-heading text-3xl sm:text-4xl lg:text-5xl font-bold text-navy uppercase tracking-tight">
+            Encontre a unidade VIP mais próxima de você
+          </h2>
+        </div>
+
+        <div className="flex flex-wrap justify-center gap-2 mb-10">
+          {filters.map((f) => (
+            <button key={f.value} onClick={() => setActiveFilter(f.value)} className={`px-4 py-2 rounded-full text-sm font-medium transition-all duration-200 ${activeFilter === f.value ? "bg-turquesa text-white" : "bg-gray-100 text-gray-600 hover:bg-turquesa/10 hover:text-turquesa"}`}>
+              {f.label}
+            </button>
+          ))}
+        </div>
+
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5">
+          {filteredUnidades.map((uni) => (
+            <div key={uni.id} className="group bg-white border border-gray-100 rounded-xl p-5 hover:shadow-lg hover:border-turquesa/30 transition-all duration-300 hover:-translate-y-1">
+              <div className="flex items-start justify-between mb-3">
+                <h3 className="font-heading text-xl font-bold text-navy">{uni.nome}</h3>
+                <MapPin className="w-5 h-5 text-turquesa shrink-0" />
+              </div>
+              <p className="text-sm text-muted-foreground mb-2">{uni.local}</p>
+              <div className="flex flex-wrap gap-1.5 mb-4">
+                {uni.modalidades.map((mod) => (
+                  <span key={mod} className="text-xs bg-turquesa/10 text-turquesa px-2 py-0.5 rounded-full font-medium">{mod}</span>
+                ))}
+                {uni.tipos.map((tipo) => (
+                  <span key={tipo} className="text-xs bg-navy/10 text-navy px-2 py-0.5 rounded-full font-medium">{tipo}</span>
+                ))}
+              </div>
+              <div className="flex items-center gap-3">
+                <a href={getWhatsAppUrl(uni.whatsappKey)} target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-1 bg-turquesa hover:bg-turquesa-dark text-white font-medium px-4 py-2 rounded-lg transition-all text-sm active:scale-[0.97]">
+                  {uni.botaoTexto}
+                </a>
+                <Link href={`/unidades/${uni.id}`} className="text-turquesa hover:text-navy text-sm font-medium flex items-center gap-1 transition-colors">
+                  Detalhes <ArrowRight className="w-3 h-3" />
+                </Link>
+              </div>
+            </div>
+          ))}
+        </div>
+
+        <div className="text-center mt-10">
+          <Link href="/unidades" className="inline-flex items-center gap-2 text-turquesa hover:text-navy font-semibold transition-colors">
+            Ver todas as unidades <ArrowRight className="w-4 h-4" />
+          </Link>
+        </div>
+      </div>
+    </section>
+  );
+}
