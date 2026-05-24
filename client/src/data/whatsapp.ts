@@ -7,6 +7,7 @@ export interface WhatsAppMessage {
   id: string;
   label: string;
   message: string;
+  number?: string;
 }
 
 export const whatsappMessages: Record<string, WhatsAppMessage> = {
@@ -78,12 +79,20 @@ export const whatsappMessages: Record<string, WhatsAppMessage> = {
   volei: {
     id: "volei",
     label: "Vôlei",
-    message: "Olá, tenho interesse em saber mais sobre as aulas de Vôlei da VIP Esportes. Poderia me enviar os locais e horários disponíveis?",
+    message: "Olá, tenho interesse em saber mais sobre as aulas de Vôlei da Escola de Vôlei Paula Pequeno / VIP Esportes. Poderia me enviar os locais e horários disponíveis?",
+    number: "5521968997981",
   },
   voleiDePraia: {
     id: "voleiDePraia",
     label: "Vôlei de Praia",
-    message: "Olá, gostaria de agendar uma aula experimental de Vôlei de Praia na VIP Esportes. Quais são os locais e turmas?",
+    message: "Olá, gostaria de agendar uma aula experimental de Vôlei de Praia na Escola de Vôlei Paula Pequeno / VIP Esportes. Quais são os locais e turmas?",
+    number: "5521968997981",
+  },
+  escolaVoleiPaulaPequeno: {
+    id: "escolaVoleiPaulaPequeno",
+    label: "Escola de Vôlei Paula Pequeno",
+    message: "Olá! Tenho interesse na Escola de Vôlei Paula Pequeno. Poderia me passar mais informações sobre as turmas e horários?",
+    number: "5521968997981",
   },
   escolasClubes: {
     id: "escolasClubes",

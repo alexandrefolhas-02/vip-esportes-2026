@@ -3,6 +3,7 @@ import { updateMetaTags } from "@/lib/seo";
 import { seoPages } from "@/data/seo";
 import Hero from "@/components/sections/Hero";
 import AutoridadeSection from "@/components/sections/AutoridadeSection";
+import PaulaPequenoSection from "@/components/sections/PaulaPequenoSection";
 import ModalidadesSection from "@/components/sections/ModalidadesSection";
 import UnidadesSection from "@/components/sections/UnidadesSection";
 import ComoFuncionaSection from "@/components/sections/ComoFuncionaSection";
@@ -23,6 +24,7 @@ export default function Home() {
     <>
       <Hero />
       <AutoridadeSection />
+      <PaulaPequenoSection />
       <ModalidadesSection />
       <UnidadesSection />
       <ComoFuncionaSection />

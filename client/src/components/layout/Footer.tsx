@@ -48,6 +48,7 @@ export default function Footer() {
               <li><Link href="/sobre" className="text-sm text-white/60 hover:text-turquesa transition-colors">A VIP</Link></li>
               <li><Link href="/metodologia" className="text-sm text-white/60 hover:text-turquesa transition-colors">Metodologia</Link></li>
               <li><Link href="/unidades" className="text-sm text-white/60 hover:text-turquesa transition-colors">Unidades</Link></li>
+              <li><Link href="/escola-de-volei-paula-pequeno" className="text-sm text-turquesa hover:text-white transition-colors font-medium">Escola de Vôlei Paula Pequeno</Link></li>
               <li><Link href="/para-escolas-clubes-condominios" className="text-sm text-white/60 hover:text-turquesa transition-colors">Para Escolas e Clubes</Link></li>
               <li><Link href="/blog" className="text-sm text-white/60 hover:text-turquesa transition-colors">Blog</Link></li>
             </ul>

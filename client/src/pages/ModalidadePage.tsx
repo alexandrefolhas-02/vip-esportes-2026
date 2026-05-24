@@ -3,9 +3,11 @@ import { useEffect } from "react";
 import { getModalidadeBySlug } from "@/data/modalidades";
 import { getUnidadeById } from "@/data/unidades";
 import { getWhatsAppUrl } from "@/lib/whatsapp";
-import { ArrowLeft, Check, MapPin } from "lucide-react";
+import { ArrowLeft, Check, MapPin, Medal } from "lucide-react";
 import { updateMetaTags } from "@/lib/seo";
 import NotFound from "./NotFound";
+
+const VOLEI_SLUGS = ["volei", "volei-de-praia"];
 
 export default function ModalidadePage() {
   const { slug } = useParams<{ slug: string }>();
@@ -50,6 +52,36 @@ export default function ModalidadePage() {
           </p>
         </div>
       </section>
+
+      {/* Paula Pequeno banner for volleyball modalities */}
+      {VOLEI_SLUGS.includes(slug || "") && (
+        <section className="py-10 bg-[#000040] border-t border-white/10">
+          <div className="container">
+            <div className="flex flex-col sm:flex-row items-center gap-6 bg-white/5 border border-turquesa/20 rounded-2xl p-6">
+              <div className="w-14 h-14 rounded-full bg-turquesa/10 border border-turquesa/30 flex items-center justify-center shrink-0">
+                <Medal className="w-7 h-7 text-turquesa" />
+              </div>
+              <div className="text-center sm:text-left flex-1">
+                <p className="text-turquesa text-xs font-bold tracking-[0.15em] uppercase mb-1">
+                  Metodologia Olímpica · Pequim 2008 · Londres 2012
+                </p>
+                <p className="text-white font-heading text-lg font-bold">
+                  Esta modalidade tem a assinatura da Escola de Vôlei Paula Pequeno
+                </p>
+                <p className="text-white/60 text-sm mt-1">
+                  Bicampeã olímpica, Paula Pequeno assina a metodologia de vôlei da VIP Esportes.
+                </p>
+              </div>
+              <Link
+                href="/escola-de-volei-paula-pequeno"
+                className="shrink-0 inline-flex items-center gap-2 border border-turquesa text-turquesa hover:bg-turquesa hover:text-white font-semibold px-5 py-2.5 rounded-lg transition-all text-sm"
+              >
+                Conhecer a escola
+              </Link>
+            </div>
+          </div>
+        </section>
+      )}
 
       {/* Content */}
       <section className="py-16 lg:py-24 bg-white">

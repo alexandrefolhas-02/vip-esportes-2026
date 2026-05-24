@@ -78,6 +78,9 @@ export default function Header() {
           <Link href="/sobre" className={`px-3 py-2 text-sm font-medium transition-colors ${isActive("/sobre") ? "text-turquesa" : "text-white/90 hover:text-turquesa"}`}>
             A VIP
           </Link>
+          <Link href="/escola-de-volei-paula-pequeno" className={`px-3 py-2 text-sm font-medium transition-colors ${isActive("/escola-de-volei-paula-pequeno") ? "text-turquesa" : "text-white/90 hover:text-turquesa"}`}>
+            Escola Paula Pequeno
+          </Link>
           <Link href="/blog" className={`px-3 py-2 text-sm font-medium transition-colors ${isActive("/blog") ? "text-turquesa" : "text-white/90 hover:text-turquesa"}`}>
             Blog
           </Link>
@@ -150,6 +153,9 @@ export default function Header() {
             </Link>
             <Link href="/sobre" onClick={() => setMobileOpen(false)} className="px-3 py-3 text-white/90 hover:text-turquesa font-medium">
               A VIP
+            </Link>
+            <Link href="/escola-de-volei-paula-pequeno" onClick={() => setMobileOpen(false)} className="px-3 py-3 text-turquesa font-semibold">
+              Escola de Vôlei Paula Pequeno
             </Link>
             <Link href="/blog" onClick={() => setMobileOpen(false)} className="px-3 py-3 text-white/90 hover:text-turquesa font-medium">
               Blog

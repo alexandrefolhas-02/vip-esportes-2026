@@ -7,8 +7,9 @@ import { WHATSAPP_NUMBER, whatsappMessages } from "@/data/whatsapp";
 export function getWhatsAppUrl(messageKey: string): string {
   const msg = whatsappMessages[messageKey];
   const text = msg ? msg.message : whatsappMessages.geral.message;
+  const number = msg?.number ?? WHATSAPP_NUMBER;
   const encodedText = encodeURIComponent(text);
-  return `https://wa.me/${WHATSAPP_NUMBER}?text=${encodedText}`;
+  return `https://wa.me/${number}?text=${encodedText}`;
 }
 
 /**

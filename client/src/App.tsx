@@ -15,6 +15,7 @@ import Metodologia from "./pages/Metodologia";
 import ParaEscolasClubesCondominios from "./pages/ParaEscolasClubesCondominios";
 import Sobre from "./pages/Sobre";
 import Blog from "./pages/Blog";
+import EscolaVoleiPaulaPequenoPage from "./pages/EscolaVoleiPaulaPequenoPage";
 
 function Router() {
   return (
@@ -27,6 +28,7 @@ function Router() {
       <Route path="/para-escolas-clubes-condominios" component={ParaEscolasClubesCondominios} />
       <Route path="/sobre" component={Sobre} />
       <Route path="/blog" component={Blog} />
+      <Route path="/escola-de-volei-paula-pequeno" component={EscolaVoleiPaulaPequenoPage} />
       <Route path="/404" component={NotFound} />
       <Route component={NotFound} />
     </Switch>
