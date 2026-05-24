@@ -19,10 +19,12 @@ export default function Header() {
     <header className="fixed top-0 left-0 right-0 z-50 bg-[#000040]/95 backdrop-blur-md border-b border-white/10">
       <div className="container flex items-center justify-between h-16 lg:h-20">
         {/* Logo */}
-        <Link href="/" className="flex items-center gap-2">
-          <span className="font-heading text-2xl lg:text-3xl font-bold text-white tracking-tight">
-            VIP <span className="text-turquesa">ESPORTES</span>
-          </span>
+        <Link href="/" className="flex items-center">
+          <img
+            src="/logo-vip-esportes.svg"
+            alt="VIP Esportes"
+            className="h-10 lg:h-12 w-auto"
+          />
         </Link>
 
         {/* Desktop Nav */}

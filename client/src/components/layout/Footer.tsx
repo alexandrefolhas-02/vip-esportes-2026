@@ -9,9 +9,11 @@ export default function Footer() {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10">
           {/* Brand */}
           <div>
-            <span className="font-heading text-2xl font-bold tracking-tight">
-              VIP <span className="text-turquesa">ESPORTES</span>
-            </span>
+            <img
+              src="/logo-vip-esportes.svg"
+              alt="VIP Esportes"
+              className="h-12 w-auto"
+            />
             <p className="mt-4 text-white/60 text-sm leading-relaxed">
               Escola de excelência esportiva no Rio de Janeiro. Desenvolvemos alunos dentro e fora das quadras com metodologia própria e professores qualificados.
             </p>
