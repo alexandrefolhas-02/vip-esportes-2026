@@ -36,6 +36,11 @@ export default function UnidadePage() {
           <h1 className="font-heading text-4xl sm:text-5xl lg:text-6xl font-bold text-white uppercase tracking-tight">
             {unidade.nome}
           </h1>
+          {unidade.destaque && (
+            <span className="inline-block mt-3 text-sm font-bold bg-turquesa text-white px-4 py-1.5 rounded-full uppercase tracking-wide">
+              {unidade.destaque}
+            </span>
+          )}
           <div className="flex items-center gap-2 mt-4">
             <MapPin className="w-5 h-5 text-turquesa" />
             <span className="text-lg text-white/80">{unidade.local}</span>
@@ -72,11 +77,19 @@ export default function UnidadePage() {
               <h3 className="font-heading text-xl font-bold text-navy uppercase mt-8 mb-3 flex items-center gap-2">
                 <Clock className="w-5 h-5 text-turquesa" /> Horários
               </h3>
+              {unidade.categorias && (
+                <p className="text-sm text-turquesa font-semibold mb-2">{unidade.categorias}</p>
+              )}
               <ul className="space-y-2">
                 {unidade.horarios.map((h) => (
                   <li key={h} className="text-foreground bg-gray-50 px-4 py-2 rounded-lg">{h}</li>
                 ))}
               </ul>
+              {unidade.observacao && (
+                <p className={`mt-3 text-sm font-semibold px-4 py-2 rounded-lg ${unidade.observacaoDestaque ? "bg-turquesa/10 text-turquesa border border-turquesa/30" : "bg-gray-100 text-gray-600"}`}>
+                  {unidade.observacao}
+                </p>
+              )}
 
               {/* Fotos */}
               {unidade.imagens && unidade.imagens.length > 0 && (
@@ -126,8 +139,11 @@ export default function UnidadePage() {
                 </div>
 
                 <div className="mt-6 pt-6 border-t border-gray-200">
+                  {unidade.endereco && (
+                    <p className="text-xs text-muted-foreground mb-3 leading-relaxed">{unidade.endereco}</p>
+                  )}
                   <a
-                    href={`https://www.google.com/maps/search/${encodeURIComponent(unidade.local + " Rio de Janeiro")}`}
+                    href={`https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(unidade.endereco || unidade.local + " Rio de Janeiro")}`}
                     target="_blank"
                     rel="noopener noreferrer"
                     className="inline-flex items-center gap-2 text-sm text-turquesa hover:text-navy font-medium transition-colors"
