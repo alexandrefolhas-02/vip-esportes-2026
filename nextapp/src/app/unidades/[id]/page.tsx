@@ -3,6 +3,7 @@ import { notFound } from "next/navigation";
 import Link from "next/link";
 import { getUnidadeById, unidades } from "@/data/unidades";
 import { getWhatsAppUrl } from "@/lib/whatsapp";
+import { JsonLd, localBusinessJsonLd } from "@/components/JsonLd";
 import { ArrowLeft, MapPin, Clock, Users, ExternalLink } from "lucide-react";
 
 export async function generateStaticParams() {
@@ -30,6 +31,7 @@ export default async function UnidadePage({ params }: { params: Promise<{ id: st
 
   return (
     <div className="pt-20 lg:pt-24">
+      <JsonLd data={localBusinessJsonLd(unidade)} />
       {/* Hero */}
       <section className="py-16 lg:py-24 bg-[#000040]">
         <div className="container">

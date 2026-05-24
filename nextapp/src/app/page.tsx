@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { JsonLd, organizationJsonLd } from "@/components/JsonLd";
 import Hero from "@/components/sections/Hero";
 import AutoridadeSection from "@/components/sections/AutoridadeSection";
 import PaulaPequenoSection from "@/components/sections/PaulaPequenoSection";
@@ -22,6 +23,7 @@ export const metadata: Metadata = {
 export default function HomePage() {
   return (
     <>
+      <JsonLd data={organizationJsonLd()} />
       <Hero />
       <AutoridadeSection />
       <PaulaPequenoSection />
